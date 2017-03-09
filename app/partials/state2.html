@@ -1,0 +1,24 @@
+<!-- State2 -->
+<hr/>
+<div class="row">
+    <div class="col-xs-4 col-xs-4 col-xs-4">
+        <!-- Panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">{{detail.movieDetail.Title}} {{'(' + detail.movieDetail.Year + ')'}}</div>
+            <div class="panel-body">
+                <!-- Image with solution for broken image links that populate greyscale picures-->
+                <img class="resize-image" ng-src={{detail.movieDetail.Poster}} src="invalid_link" onerror="this.onerror=null;this.src='https://placeimg.com/640/480/any/grayscale;" />
+                <hr/>
+                <!-- Details -->
+                <p><strong>Plot:</strong> {{detail.movieDetail.Plot}}</p>
+                <p><strong>Starring:</strong> {{detail.movieDetail.Actors}}</p>
+                <p><strong>Genre:</strong> {{detail.movieDetail.Genre}}</p>
+                <p><strong>Rated:</strong> {{detail.movieDetail.Rated}}</p>
+                <p><strong>Runtime:</strong> {{detail.movieDetail.Runtime}}</p>
+                <p><strong>Awards:</strong> {{detail.movieDetail.Awards}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Link back to home page -->
+<a ui-sref="state1">Home Page</a>

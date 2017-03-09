@@ -1,0 +1,36 @@
+<!-- State 1 -->
+<hr/>
+<!-- Input & Button-->
+<div class="contaner-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." ng-model="vm.movieTitleInput">
+                <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button" ng-click="vm.getMovie()">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<hr/>
+<!-- Panel -->
+<div class="contaner-fluid">
+    <div class="row">
+        <div ng-repeat="data in vm.movies" class="col-xs-4 col-xs-4 col-xs-4">
+            <div class="panel panel-default panel-height">
+                <div class="panel-heading">{{data.Title}}</div>
+                <div class="panel-body text-center">
+                    <!-- Image with solution for broken image links that populate greyscale picures-->
+                    <img class="resize-image" ng-src={{data.Poster}} src="invalid_link" onerror="this.onerror=null;this.src='https://placeimg.com/640/480/any/grayscale';" />
+                    <hr/>
+                    <!-- Data -->
+                    <p>{{'Released in ' + data.Year}}</p>
+                    <!-- Link to State2 -->
+                    <p><a ui-sref="state2({movieDetailId: data.imdbID})">Click here to view on IMDB</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ui-view></div>
